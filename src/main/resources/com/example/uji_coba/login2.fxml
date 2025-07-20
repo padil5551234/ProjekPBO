@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="CENTER" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.LoginController" stylesheets="@mamakos_styles.css">
+    <children>
+        <!-- Panel Kiri untuk Input Login -->
+        <VBox alignment="CENTER" prefHeight="550.0" prefWidth="425.0" spacing="15.0" styleClass="login-pane">
+            <padding>
+                <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+            </padding>
+            <children>
+                <Label styleClass="login-header" text="Selamat Datang!" />
+                <Label styleClass="login-subheader" text="Masuk untuk melanjutkan ke MamaKos" />
+
+                <VBox spacing="15.0" alignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="20.0" bottom="20.0"/>
+                    </VBox.margin>
+                    <HBox styleClass="login-textfield-container" spacing="10">
+                        <children>
+                            <javafx.scene.shape.SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" styleClass="login-textfield-icon" />
+                            <TextField fx:id="usernameField" promptText="Username" styleClass="login-textfield" HBox.hgrow="ALWAYS" />
+                        </children>
+                    </HBox>
+                    <HBox styleClass="login-textfield-container" spacing="10">
+                        <children>
+                            <javafx.scene.shape.SVGPath content="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9z" styleClass="login-textfield-icon" />
+                            <PasswordField fx:id="passwordField" promptText="Password" styleClass="login-textfield" HBox.hgrow="ALWAYS" />
+                        </children>
+                    </HBox>
+                </VBox>
+
+                <CheckBox fx:id="rememberMeCheckBox" text="Ingat Saya" styleClass="remember-me-checkbox" />
+
+                <Button fx:id="loginButton" onAction="#handleLoginButton" styleClass="login-button" text="LOGIN" />
+                <Label fx:id="errorLabel" styleClass="error-label" />
+
+                <HBox alignment="CENTER" spacing="5.0">
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
+                    <Label styleClass="login-footer-text" text="Belum punya akun?" />
+                    <Hyperlink onAction="#handleSignUpLink" styleClass="login-hyperlink" text="Daftar di sini" />
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Panel Kanan untuk Branding -->
+        <VBox alignment="CENTER" prefHeight="550.0" prefWidth="425.0" spacing="10.0" styleClass="branding-pane">
+            <children>
+                <ImageView fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo.png" />
+                    </image>
+                </ImageView>
+                <Label styleClass="branding-title" text="mamakos" />
+                <Label styleClass="branding-tagline" text="make yourself at home" />
+            </children>
+        </VBox>
+    </children>
+</HBox>

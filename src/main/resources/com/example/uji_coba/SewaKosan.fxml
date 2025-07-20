@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="root" stylesheets="@mamakos_styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.SewaKosanController">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200.0">
+            <children>
+                <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="60.0" right="60.0" top="30.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Button fx:id="dashboardButton" onAction="#handleDashboardClick" prefHeight="40.0" prefWidth="200.0" text="Sewa Kosan" />
+                <Button fx:id="cariButton" onAction="#handleCariClick" prefHeight="40.0" prefWidth="200.0" text="Cari Kosan" />
+                <VBox VBox.vgrow="ALWAYS" />
+                <Button fx:id="logoutButton" onAction="#handleLogoutClick" prefHeight="40.0" prefWidth="200.0" text="Log Out" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox styleClass="main-content" spacing="20">
+            <padding>
+                <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Button fx:id="backButton" onAction="#handleBackClick" styleClass="back-button" text="&lt;" />
+                        <Label styleClass="header-title" text="Kosan yang Anda Sewa" />
+                    </children>
+                </HBox>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox fx:id="sewaContainer" spacing="10.0" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

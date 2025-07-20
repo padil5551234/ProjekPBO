@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.ComboBox?>
+
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.ListView?>
+
+<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.image.Image?>
+
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.text.Font?>
+
+
+
+<BorderPane minHeight="500.0" minWidth="700.0" prefHeight="700.0" prefWidth="1000.0" maxHeight="1200.0" maxWidth="1600.0" styleClass="root" stylesheets="@mamakos_styles.css"
+    xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.UserDashboardController">
+
+    <left>
+
+        <VBox styleClass="sidebar" BorderPane.alignment="CENTER">
+
+            <children>
+
+                <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+
+                    <image>
+
+                        <Image url="@images/logo.png" />
+
+                    </image>
+
+                    <VBox.margin>
+
+                        <Insets left="50.0" top="30.0" />
+
+                    </VBox.margin>
+
+                </ImageView>
+
+                <Label styleClass="branding-title" text="mamakos">
+
+                    <VBox.margin>
+
+                        <Insets left="40.0" />
+
+                    </VBox.margin>
+
+                </Label>
+
+                <VBox VBox.vgrow="ALWAYS">
+
+                    <VBox.margin>
+
+                        <Insets top="30.0" />
+
+                    </VBox.margin>
+
+                    <children>
+
+                        <Button fx:id="dashboardButton" onAction="#handleDashboardClick" text="Dashboard Kosan" />
+
+                        <Button fx:id="cariButton" onAction="#handleCariClick" styleClass="sidebar-button-selected" text="Cari Kosan" />
+
+                        <Button fx:id="sewaButton" onAction="#handleSewaClick" text="Sewa Kosan" />
+
+                        <Button fx:id="struksButton" onAction="#handleStruksClick" text="Struk Belanja" />
+
+                        <Button fx:id="profileButton" onAction="#handleProfileClick" text="Profil" />
+
+                    </children>
+
+                </VBox>
+
+                <Button fx:id="logoutButton" onAction="#handleLogoutClick" text="Log Out">
+
+                    <VBox.margin>
+
+                        <Insets bottom="30.0" left="30.0" />
+
+                    </VBox.margin>
+
+                </Button>
+
+            </children>
+
+        </VBox>
+
+    </left>
+
+    <center>
+
+        <VBox fx:id="kosanContainer" styleClass="main-content" BorderPane.alignment="CENTER">
+
+            <children>
+
+                <Label styleClass="header-title" text="Cari Kosan" />
+
+                <VBox spacing="10.0">
+
+                    <VBox.margin>
+
+                        <Insets bottom="10.0" top="10.0" />
+
+                    </VBox.margin>
+
+                    <children>
+
+                        <HBox spacing="15.0" alignment="CENTER_LEFT">
+
+                            <children>
+
+                                <TextField fx:id="searchField" promptText="Cari berdasarkan nama, alamat, atau universitas..." styleClass="search-field" HBox.hgrow="ALWAYS" />
+
+                                <Button fx:id="searchButton" onAction="#handleSearchClick" styleClass="search-button" text="Cari" />
+
+                            </children>
+
+                        </HBox>
+
+                        <HBox spacing="12.0" alignment="CENTER_LEFT" styleClass="filter-container">
+
+                            <children>
+
+                                <ComboBox fx:id="jenisKosFilter" promptText="Jenis Kos" styleClass="combo-box" prefWidth="120.0" />
+
+                                <ComboBox fx:id="hargaRangeFilter" promptText="Rentang Harga" styleClass="combo-box" prefWidth="150.0" />
+
+                                <ComboBox fx:id="universitasFilter" promptText="Universitas" styleClass="combo-box" prefWidth="140.0" />
+
+                                <ComboBox fx:id="sortComboBox" promptText="Urutkan" styleClass="combo-box" prefWidth="120.0" />
+
+                                <Button fx:id="resetFilterButton" onAction="#handleResetFilters" styleClass="reset-filter-button" text="Reset" />
+
+                            </children>
+
+                        </HBox>
+
+                    </children>
+
+                </VBox>
+
+                <ListView fx:id="kosanListView" styleClass="list-view" VBox.vgrow="ALWAYS" />
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

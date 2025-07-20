@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="cardPane" styleClass="kosan-card-user" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.KosanCardController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="kosanImage" fitHeight="120.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" styleClass="kosan-image" />
+            <VBox onMouseClicked="#handleCardClick" spacing="8.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="namaKosLabel" styleClass="kos-name" text="Nama Kosan" />
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/gender-symbols.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="jenisKosLabel" styleClass="kos-type-label" text="Jenis Kos" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/gps.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="alamatLabel" styleClass="kos-location-label" text="Alamat Kos" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="hargaLabel" styleClass="kos-price" text="Rp. 1.000.000/Bulan" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="viewOrderButton" mnemonicParsing="false" onAction="#handleViewOrderClick" styleClass="primary-button" text="View Order" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

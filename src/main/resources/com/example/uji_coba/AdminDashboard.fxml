@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" styleClass="root" stylesheets="@mamakos_styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.AdminDashboardController">
+    <left>
+        <VBox styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Button fx:id="dashboardButton" onAction="#handleDashboardButton" text="Dashboard" />
+                <Button fx:id="kosButton" onAction="#handleKosButton" text="Kos" />
+                <Button fx:id="tenantButton" onAction="#handleTenantButton" text="Tenant" />
+                <Button fx:id="userButton" onAction="#handleUserButton" text="User" />
+                <Button fx:id="reportButton" onAction="#handleReportButton" text="Report" />
+                <VBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="logoutButton" onAction="#handleLogoutButton" text="Log Out" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox styleClass="header">
+                    <children>
+                        <Label styleClass="header-title" text="Administrator" />
+                        <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label fx:id="welcomeLabel" styleClass="header-welcome-text" text="Welcome, Admin!" />
+                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/logo.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <AnchorPane fx:id="contentArea" prefHeight="520.0" prefWidth="800.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+               <children>
+                  <ScrollPane fx:id="scrollPane" fitToWidth="true" layoutX="14.0" layoutY="14.0" prefHeight="492.0" prefWidth="772.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                     <content>
+                        <VBox fx:id="contentBox" prefWidth="770.0" spacing="10.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

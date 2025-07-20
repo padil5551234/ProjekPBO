@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="150.0" prefWidth="700.0" styleClass="order-card" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.OrderCardController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" spacing="15.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <!-- Header Section -->
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS" spacing="5.0">
+                            <children>
+                                <Label fx:id="kosanNameLabel" styleClass="order-card-header" text="Nama Kosan" />
+                                <Label fx:id="userNameLabel" styleClass="order-card-info" text="Nama User" />
+                            </children>
+                        </VBox>
+                        <Label fx:id="statusLabel" styleClass="order-status-pending" text="Status" />
+                    </children>
+                </HBox>
+                
+                <!-- Details Section -->
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <children>
+                        <VBox spacing="3.0">
+                            <children>
+                                <Label styleClass="order-card-info" text="Tanggal Sewa:" />
+                                <Label fx:id="tanggalSewaLabel" styleClass="order-card-price" text="Tanggal Sewa" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="3.0">
+                            <children>
+                                <Label styleClass="order-card-info" text="Durasi:" />
+                                <Label fx:id="durasiLabel" styleClass="order-card-price" text="1 bulan" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="3.0">
+                            <children>
+                                <Label styleClass="order-card-info" text="Total:" />
+                                <Label fx:id="totalLabel" styleClass="order-card-price" text="Rp 0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                
+                <!-- Action Buttons Section -->
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="acceptButton" onAction="#handleAccept" styleClass="accept-button" text="Terima" />
+                        <Button fx:id="rejectButton" onAction="#handleReject" styleClass="reject-button" text="Tolak" />
+                        <Button fx:id="ulasanButton" onAction="#handleUlasan" styleClass="ulasan-button" text="Beri Ulasan" visible="false" />
+                        <Button fx:id="receiptButton" onAction="#handleShowReceipt" styleClass="print-button" text="Lihat Struk" visible="false" />
+                        <Button fx:id="deleteButton" onAction="#handleDelete" styleClass="delete-button" text="Hapus" visible="false" />
+                   </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

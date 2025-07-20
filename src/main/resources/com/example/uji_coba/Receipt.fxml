@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane minHeight="400.0" minWidth="400.0" prefHeight="720.0" prefWidth="580.0" stylesheets="@mamakos_styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uji_coba.ReceiptController">
+    <center>
+        <VBox alignment="CENTER" spacing="15.0" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
+            </padding>
+            
+            <VBox fx:id="receiptContainer" styleClass="receipt-container-resizable" spacing="12.0" alignment="CENTER" VBox.vgrow="ALWAYS">
+                
+                <VBox spacing="8.0" alignment="CENTER">
+                    <Label styleClass="receipt-header" text="MAMAKOS" />
+                    <Label styleClass="receipt-title" text="STRUK PEMESANAN KOSAN" />
+                    <Label styleClass="receipt-footer" text="Bukti Serah Terima" />
+                </VBox>
+                
+                <VBox styleClass="receipt-divider" />
+                
+                <VBox spacing="12.0">
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="No. Pesanan:" />
+                        <Label fx:id="orderIdLabel" styleClass="receipt-value" text="ORD000022" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="Nama Kosan:" />
+                        <Label fx:id="kosanNameLabel" styleClass="receipt-value" text="Kosan Berjuangggg" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="Penyewa:" />
+                        <Label fx:id="userNameLabel" styleClass="receipt-value" text="Kelompok3User@gmail.com" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="Tanggal Sewa:" />
+                        <Label fx:id="tanggalSewaLabel" styleClass="receipt-value" text="10/07/2025" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="Durasi:" />
+                        <Label fx:id="durasiLabel" styleClass="receipt-value" text="1 bulan" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                    <HBox styleClass="receipt-row">
+                        <Label styleClass="receipt-label" text="Harga/bulan:" />
+                        <Label fx:id="hargaLabel" styleClass="receipt-value" text="Rp 750.000" HBox.hgrow="ALWAYS" />
+                    </HBox>
+                </VBox>
+                
+                <VBox styleClass="receipt-divider" />
+                
+                <HBox styleClass="receipt-row">
+                    <Label styleClass="receipt-label-total" text="TOTAL BAYAR:" />
+                    <Label fx:id="totalLabel" styleClass="receipt-total" text="Rp 750.000" HBox.hgrow="ALWAYS" />
+                </HBox>
+                
+                <VBox styleClass="receipt-divider" />
+                
+                <VBox spacing="8.0" alignment="CENTER">
+                    <Label fx:id="tanggalCetakLabel" styleClass="receipt-footer" text="Dicetak pada: 08/07/2025 17:13" />
+                    <Label styleClass="receipt-footer-status" text="Status: DITERIMA" />
+                    <Label styleClass="receipt-footer" text="Terima kasih telah menggunakan layanan MAMAKOS" />
+                    <Label styleClass="receipt-footer" text="Simpan struk ini sebagai bukti pemesanan yang sah." />
+                </VBox>
+            </VBox>
+            
+            <HBox spacing="15.0" alignment="CENTER" minHeight="50.0">
+                <Button onAction="#handlePrint" styleClass="print-button-visible" text="Cetak Struk" minWidth="120.0" prefWidth="140.0" minHeight="40.0" />
+                <Button onAction="#handleBackToDashboard" styleClass="dashboard-button-visible" text="Kembali ke Dasbor" minWidth="150.0" prefWidth="170.0" minHeight="40.0" />
+                <Button onAction="#handleClose" styleClass="back-button-visible" text="Tutup" minWidth="120.0" prefWidth="140.0" minHeight="40.0" />
+                <Button onAction="#handleViewReceipt" styleClass="view-receipt-button-visible" text="Lihat Detail" minWidth="120.0" prefWidth="140.0" minHeight="40.0" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
